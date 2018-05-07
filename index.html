@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="https://vignette.wikia.nocookie.net/leonhartimvu/images/d/d7/JARVIS_Logo.png/revision/latest?cb=20131024021443"/>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <title>Cool New Tab</title>
+</head>
+<body>
+    <style>
+        .blue {
+            color: royalblue;
+        }
+        .red {
+            color: indianred;
+        }
+        #search {
+            
+            margin: auto;
+            height: 60px;
+            width: 20%;
+            display: block;
+            border: 5px solid #1b5285;
+            background-color: #000101; 
+            color: #1b5285;
+            font-family: 'Press Start 2P', Arial;
+            font-size: 25px;
+            transition-duration: .7s;
+        }
+
+        #search:focus {
+        	width: 50%;
+        	height: 80px;
+        	font-size: 30px;
+        	transition-duration: 1.2s;
+        	max-width: 600px;
+        }
+        input { 
+            font-size: 50px; 
+        }
+        #searchbutton {
+            width: 20%;
+            height: 50px;
+            background-color: royalblue; /* blue */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+            margin: auto;
+            margin-top: 50px;
+            display: none;
+        }
+        #searchbutton:hover {
+            background-color: indianred;
+        }
+        html,
+        body,
+        .container {
+          min-height: 100%;
+          width: 100%;
+          margin: 0px;
+          padding: 0px;
+        }
+        html {
+          background-image: url("background.jpg");
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          background-color: #000101;
+        }
+        h1 {
+            display: block;
+            text-align: center;
+            font-size: 50px;
+        }
+    </style>
+    <script>
+    function redirect() {
+        openInNewTab(document.getElementById('search').value);
+        return false;
+    }
+    function openInNewTab(url) {
+      var win = window.open("https://www.google.com/#q=" + url, '_blank');
+      win.focus();
+    }
+    </script>
+	<div style = "margin-top: 400px; margin-bottom: 0px"></div>
+    <form onsubmit="return redirect();">
+    <input id="search" type="text" />
+    <input id = "searchbutton" type="submit" value="Search">
+    </form>
+
+</body>
